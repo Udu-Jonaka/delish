@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/7279bfc684.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+    /* Reset some default styles */
+
+    @media (max-width: 990px) {
+      .about{
+        padding: 20px;
+      }
+    }
+    @media (max-width: 800px) {
+      .about-items {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .about-text {
+        text-align: justify;
+        margin: 0;
+      }
+      .why-cards {
+        gap: 1rem;
+      }
+    }
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    background-color: #121113;
+    z-index: 1000;
+  }
+  body.light-mode .nav-links{
+    background-color: #f0ead6;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    opacity: 1;
+    padding: 1rem 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-button {
+    display: none; /* hide main button on small screens */
+  }
+
+  /* toggle animation */
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
+    @media (max-width: 700px) {
+      .why-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .divider {
+        display: none;
+      }
+      .why-card {
+        max-width: 90vw;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      .about-img img {
+        width: 90vw;
+      }
+    }
+    </style>
+</head>
+<body>
+<!---------NAVBAR--------->
+<section id="navbar">
+  <nav class="nav-lg">
+    <div class="nav-container">
+      <h1 class="nav-logo">Delish</h1>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Benefits</a></li>
+        <li><a href="#">Products</a></li>
+      </ul>
+
+      <a href="#" class="nav-button">Order Now</a>
+    </div>
+  </nav>
+</section>
+<!---------HERO--------->
+    <section id="hero">
+        <div class="hero">
+            <h1>Savor The Flavor</h1>
+            <a href="" class="hero-button">View Menu</a>
+        </div>
+    </section>
+<!---------ABOUT--------->
+    <section id="about" class="about">
+      <h1>ABOUT US</h1>
+      <div class="about-items">
+      <div class="about-img">
+        <img src="/about.png" alt="">
+      </div>
+      <div class="about-text">
+        <p><span class="nav-logo">Delish</span> was born from a desire to bring <strong>Authentic, Satisfying and Complete Meals</strong> directly to your table without the fuss <br>
+        We believe great food starts with the freshest ingredients, prepared daily with genuine passion and care. <br>
+        Every meal, is crafted to deliver the perfect balance of flavor and excellent value</p>
+      </div>
+      </div>
+    </section>
+<!---------MENU--------->
+<!---------WHY--------->
+    <section id="why">
+    <div class="why">
+      <h1>WHY CHOOSE US</h1>
+      <div class="why-cards">
+      <div class="why-card">
+        <i class="fa-solid fa-utensils"></i>
+        <p>FRESH</p>
+        <p>INGRIDENTS</p>
+      </div>
+      <div class="divider"></div>
+      <div class="why-card">
+        <i class="fa-solid fa-clock"></i>
+        <p>FAST FOOD</p>
+        <p>PRE-ORDER</p>
+      </div>
+      <div class="divider"></div>
+      <div class="why-card">
+        <i class="fa-solid fa-bell"></i>
+        <p>RELIABLE</p>
+        <p>DELIVERY</p>
+      </div>
+      </div>
+    </div>
+    </section>
+    <button id="theme-toogle" class="theme-toogle">
+      <i class="fas fa-moon"></i>
+    </button>
+    <script src="/script.js"></script>
+</body>
+</html>

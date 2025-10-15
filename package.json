@@ -1,0 +1,23 @@
+{
+  "name": "delish",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Udu-Jonaka/delish.git"
+  },
+  "author": "Udu Jonaka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Udu-Jonaka/delish/issues"
+  },
+  "homepage": "https://github.com/Udu-Jonaka/delish#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
