@@ -106,6 +106,43 @@
         width: 90vw;
       }
     }
+        @media (max-width: 768px) {
+            .card {
+                min-width: 280px;
+            }
+
+            .card-image {
+                height: 200px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 22px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                min-width: 250px;
+            }
+
+            .carousel-track {
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -154,26 +191,57 @@
     </section>
 <!---------MENU--------->
 <section id="menu" class="menu">
-  <div class="menu-items">
-    <div class="menu-card">
-      <div class="menu-text">
-      <h2>Pasta</h2>
-      <span><a href="" class="menu-button">View Menu</a><a href="" class="menu-button">View Menu</a></span>
-      </div>
+  <h1>VIEW OUR BEST SELLERS</h1>
+    <div class="carousel-container">
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="card">
+                    <img src="/Pasta.png" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Pasta</h2>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <a href="" class="stat-number">Place Order</a>
+                                <a href="" class="stat-label">Live Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/beef-curry.png" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Beef Curry</h2>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <a href="" class="stat-number">Place Order</a>
+                                <a href="" class="stat-label">Live Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/noodles.png" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Stir-fry Noodles</h2>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <a href="" class="stat-number">Place Order</a>
+                                <a href="" class="stat-label">Live Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="control-btn" id="prevBtn">‹</button>
+                <button class="control-btn" id="nextBtn">›</button>
+            </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
     </div>
-    <div class="menu-card">
-      <div class="menu-text">
-      <h2>Pasta</h2>
-      <span><a href="" class="menu-button">View Menu</a><a href="" class="menu-button">View Menu</a></span>
-      </div>
-    </div>
-    <div class="menu-card">
-      <div class="menu-text">
-      <h2>Pasta</h2>
-      <span><a href="" class="menu-button">View Menu</a><a href="" class="menu-button">View Menu</a></span>
-      </div>
-    </div>
-  </div>
+    <div class="menu-btn"><a href="" class="menu-button">View Menu</a></div>
 </section>
 <!---------WHY--------->
     <section id="why">
@@ -200,6 +268,39 @@
       </div>
     </div>
     </section>
+<section id="footer">
+      <footer>
+    <!-- Brand + Contact -->
+    <div class="footer-col">
+      <h3 class="nav-logo">Delish</h3>
+      <div class="contact-info">
+        <p><i class="fa-solid fa-phone"></i> Tel: +77 9885778643</p>
+        <p><i class="fa-solid fa-envelope"></i> delish@support.com</p>
+        <p><i class="fa-solid fa-clock"></i> Mon-Sat 8am - 9pm GMT</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="footer-col">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Menu</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-col">
+      <h3>Social Media</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+       <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+</section>
     <button id="theme-toogle" class="theme-toogle">
       <i class="fas fa-moon"></i>
     </button>
