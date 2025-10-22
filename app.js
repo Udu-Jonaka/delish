@@ -12,6 +12,10 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
+app.get('/menu', function(req, res) {
+  res.sendFile(path.join(__dirname, 'views', 'menu.html'));
+});
+
 // Start server
 
 app.listen(PORT, function() {

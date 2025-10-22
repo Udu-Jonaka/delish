@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <script src="https://kit.fontawesome.com/7279bfc684.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+    @media (max-width: 768px) {
+    .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    background-color: #121113;
+    z-index: 1000;
+    }
+    body.light-mode .nav-links{
+    background-color: #f0ead6;
+    }
+
+    .nav-links.active {
+    max-height: 300px;
+    opacity: 1;
+    padding: 1rem 0;
+    }
+
+    .nav-toggle {
+    display: flex;
+    }
+
+    .nav-button {
+    display: none; /* hide main button on small screens */
+    }
+
+    /* toggle animation */
+    .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+    }
+    .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+    }
+
+    .menu-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    }
+    .card{
+    width: auto;
+    }
+    }
+    @media (max-width: 1199px) {
+    .menu-container {
+        gap: 20px;
+    }
+    
+    .card {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 991px) {
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .card-image {
+        height: 240px;
+    }
+    
+    .card-content {
+        padding: 25px;
+    }
+    
+    .card-title {
+        font-size: 24px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+    #menu {
+        margin-top: 20px;
+        padding: 15px;
+    }
+    
+    .menu-container {
+        gap: 16px;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
+    .card-image {
+        height: 150px;
+    }
+    
+    .card-content {
+        padding: 10px;
+    }
+    
+    .card-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+}
+@media (max-width: 575px) {
+    #menu {
+        padding: 10px;
+    }
+    
+    .menu-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 24px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    .card-stats {
+        gap: 15px;
+    }
+}
+
+/* Extra small devices (up to 375px) */
+@media (max-width: 375px) {
+    .card-image {
+        height: 180px;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .card-title {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .stat-label {
+        font-size: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!---------NAVBAR--------->
+<section id="navbar">
+  <nav class="nav-lg">
+    <div class="nav-container">
+      <h1 class="nav-logo">Delish</h1>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Benefits</a></li>
+        <li><a href="#">Products</a></li>
+      </ul>
+
+      <!-- <a href="#" class="nav-button">Order Now</a> -->
+    </div>
+  </nav>
+</section>
+<section id="header">
+    <h1>Our Menu</h1>
+</section>
+    <!---------MENU--------->
+<section id="menu" class="menu">
+    <div class="menu-container">
+        <div class="card">
+            <img src="/images/Pasta.png" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Pasta & <br> plantain</h2>
+                <div class="card-stats">
+                <div class="stat">
+                <a href="" class="stat-number">Place Order</a>
+                <a href="" class="stat-label">Live Preview</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/stir-fry.png" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Stir-fry <br> Pasta</h2>
+                <div class="card-stats">
+                <div class="stat">
+                <a href="" class="stat-number">Place Order</a>
+                <a href="" class="stat-label">Live Preview</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/noodles.png" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">stir-fry <br> Noodles</h2>
+                <div class="card-stats">
+                <div class="stat">
+                <a href="" class="stat-number">Place Order</a>
+                <a href="" class="stat-label">Live Preview</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/combo.png" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Pasta <br> Combo</h2>
+                <div class="card-stats">
+                <div class="stat">
+                <a href="" class="stat-number">Place Order</a>
+                <a href="" class="stat-label">Live Preview</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/chicken-curry.png" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Chicken <br> Curry</h2>
+                <div class="card-stats">
+                <div class="stat">
+                <a href="" class="stat-number">Place Order</a>
+                <a href="" class="stat-label">Live Preview</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/beef-curry.png" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Beef<br>Curry</h2>
+                <div class="card-stats">
+                <div class="stat">
+                <a href="" class="stat-number">Place Order</a>
+                <a href="" class="stat-label">Live Preview</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <button id="theme-toogle" class="theme-toogle">
+      <i class="fas fa-moon"></i>
+    </button>
+<script src="/JS/menu.js"></script>
+</body>
+</html>
