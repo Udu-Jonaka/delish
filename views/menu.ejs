@@ -1,64 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/menu.css">
-    <script src="https://kit.fontawesome.com/7279bfc684.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <%- include('partials/head') %>
     <style>
-    @media (max-width: 768px) {
-    .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.4s ease;
-    background-color: #121113;
-    z-index: 1000;
-    }
-    body.light-mode .nav-links{
-    background-color: #f0ead6;
-    }
-
-    .nav-links.active {
-    max-height: 300px;
-    opacity: 1;
-    padding: 1rem 0;
-    }
-
-    .nav-toggle {
-    display: flex;
-    }
-
-    .nav-button {
-    display: none; /* hide main button on small screens */
-    }
-
-    /* toggle animation */
-    .nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
-    }
-    .nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-    }
-    .nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
-    }
-
-    .menu-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    }
-    .card{
-    width: auto;
-    }
-    }
     @media (max-width: 1199px) {
     .menu-container {
         gap: 20px;
@@ -188,28 +133,8 @@
     </style>
 </head>
 <body>
-    <!---------NAVBAR--------->
-<section id="navbar">
-  <nav class="nav-lg">
-    <div class="nav-container">
-      <h1 class="nav-logo">Delish</h1>
+<%- include('partials/navbar', { showOrderButton: false }) %>
 
-      <div class="nav-toggle" id="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Benefits</a></li>
-        <li><a href="#">Products</a></li>
-      </ul>
-
-      <!-- <a href="#" class="nav-button">Order Now</a> -->
-    </div>
-  </nav>
-</section>
 <section id="header">
     <h1>Our Menu</h1>
 </section>
@@ -290,6 +215,7 @@
         </div>
     </div>
 </section>
+    <%- include('partials/footer') %>
     <button id="theme-toogle" class="theme-toogle">
       <i class="fas fa-moon"></i>
     </button>

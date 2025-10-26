@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
-    <script src="https://kit.fontawesome.com/7279bfc684.js" crossorigin="anonymous"></script>
-    <title>Delish</title>
+    <%- include('partials/head') %>
     <style>
     /* Reset some default styles */
     @media (min-width: 1000px) {
@@ -37,50 +34,6 @@
         gap: 1rem;
       }
     }
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.4s ease;
-    background-color: #121113;
-    z-index: 1000;
-  }
-  body.light-mode .nav-links{
-    background-color: #f0ead6;
-  }
-
-  .nav-links.active {
-    max-height: 300px;
-    opacity: 1;
-    padding: 1rem 0;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-button {
-    display: none; /* hide main button on small screens */
-  }
-
-  /* toggle animation */
-  .nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
-  }
-  .nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
-  }
-}
     @media (max-width: 700px) {
       .why-cards {
         flex-direction: column;
@@ -230,28 +183,8 @@
     </style>
 </head>
 <body>
-<!---------NAVBAR--------->
-<section id="navbar">
-  <nav class="nav-lg">
-    <div class="nav-container">
-      <h1 class="nav-logo">Delish</h1>
+<%- include('partials/navbar', { showOrderButton: true }) %>
 
-      <div class="nav-toggle" id="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Benefits</a></li>
-        <li><a href="#">Products</a></li>
-      </ul>
-
-      <a href="/menu" class="nav-button">Order Now</a>
-    </div>
-  </nav>
-</section>
 <!---------HERO--------->
     <section id="hero">
         <div class="hero">
@@ -352,39 +285,7 @@
       </div>
     </div>
     </section>
-<section id="footer">
-      <footer>
-    <!-- Brand + Contact -->
-    <div class="footer-col">
-      <h3 class="nav-logo">Delish</h3>
-      <div class="contact-info">
-        <p><i class="fa-solid fa-phone"></i> Tel: +77 9885778643</p>
-        <p><i class="fa-solid fa-envelope"></i> delish@support.com</p>
-        <p><i class="fa-solid fa-clock"></i> Mon-Sat 8am - 9pm GMT</p>
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <div class="footer-col">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our Menu</a></li>
-      </ul>
-    </div>
-
-    <!-- Social Media -->
-    <div class="footer-col">
-      <h3>Social Media</h3>
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-       <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-    </div>
-  </footer>
-</section>
+    <%- include('partials/footer') %>
     <button id="theme-toogle" class="theme-toogle">
       <i class="fas fa-moon"></i>
     </button>

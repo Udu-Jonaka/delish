@@ -1,0 +1,24 @@
+<!---------NAVBAR--------->
+<section id="navbar">
+  <nav class="nav-lg">
+    <div class="nav-container">
+      <h1 class="nav-logo">Delish</h1>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#why">Benefits</a></li>
+        <li><a href="/#menu">Products</a></li>
+      </ul>
+
+      <% if (showOrderButton) { %>
+        <a href="/menu" class="nav-button">Order Now</a>
+      <% } %>
+    </div>
+  </nav>
+</section>

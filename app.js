@@ -4,20 +4,23 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 // Serve static files from "public"
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.render('index');
 });
 
 app.get('/menu', function(req, res) {
-  res.sendFile(path.join(__dirname, 'views', 'menu.html'));
+  res.render('menu');
 });
 
 // Start server
-
 app.listen(PORT, function() {
   console.log(`Server running at http://localhost:${PORT}`);
 });
