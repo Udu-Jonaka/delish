@@ -26,3 +26,26 @@ toogleBtn.addEventListener('click', function() {
         icon.classList.replace('fa-sun', 'fa-moon');
     }
 });
+
+// Live Preview
+const modal = document.getElementById('imgModal');
+const modalImg = document.getElementById('modalImage');
+const closeBtn = document.querySelector('.close');
+
+document.querySelectorAll('.stat-label').forEach(function(link){
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const imgSrc = link.getAttribute('data-image');
+    modalImg.src = imgSrc;
+    modal.style.display = 'flex';
+  });
+});
+
+closeBtn.onclick = function(){
+  modal.style.display = 'none';
+};
+modal.onclick = function(e){
+  if (e.target === modal){
+    modal.style.display = 'none';
+  }
+};
