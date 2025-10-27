@@ -3,21 +3,13 @@ document.getElementById("contactForm").addEventListener("submit", function (even
 
   const formData = new FormData(this);
 
-  fetch("/submit-review", {
+  fetch("/contact", {
     method: "POST",
     body: formData
   })
     .then(function (response) {
       return response.text();
     })
-    .then(function (data) {
-      alert("Thank you for your feedback! 🍽️");
-      this.reset(); // clear the form after submission
-    }.bind(this)) // bind 'this' to keep form reference
-    .catch(function (error) {
-      alert("Oops! Something went wrong. Please try again.");
-      console.error(error);
-    });
 });
 
   // Toggle mobile menu
