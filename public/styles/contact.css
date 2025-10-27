@@ -129,16 +129,6 @@ body.light-mode .nav-button {
   outline: none;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  background-color: #d4af37;
-}
-
-body.light-mode .contact-form input:focus,
-.contact-form textarea:focus{
-  background-color: #cb6843;    
-}
-
 .contact-form button {
   display: block;
   width: 100%;
