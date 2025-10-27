@@ -20,6 +20,10 @@ app.get('/menu', function(req, res) {
   res.render('menu');
 });
 
+app.get('/contact', function(req, res) {
+  res.render('contact');
+});
+
 // Start server
 app.listen(PORT, function() {
   console.log(`Server running at http://localhost:${PORT}`);

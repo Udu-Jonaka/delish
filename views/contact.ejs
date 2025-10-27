@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles/contact.css">
+    <%- include('partials/head') %>
+    <title>Document</title>
+</head>
+<body>
+<%- include('partials/navbar', { showOrderButton: true }) %>
+<section id="contact-page">
+      <section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <form id="contactForm" class="contact-form">
+    <div class="form-group">
+      <label for="email">Email Address*</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email" />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number (optional)</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
+    </div>
+
+    <div class="form-group">
+      <label for="review">Your Review</label>
+      <textarea id="review" name="review" rows="5" required placeholder="Write your review here..."></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+</section>
+    <%- include('partials/footer') %>
+    <button id="theme-toogle" class="theme-toogle">
+      <i class="fas fa-moon"></i>
+    </button>
+<script src="/JS/contact.js"></script>
+</body>
+</html>
