@@ -1,17 +1,3 @@
-document.getElementById("contactForm").addEventListener("submit", function (event) {
-  event.preventDefault(); // prevent page reload
-
-  const formData = new FormData(this);
-
-  fetch("/contact", {
-    method: "POST",
-    body: formData
-  })
-    .then(function (response) {
-      return response.text();
-    })
-});
-
   // Toggle mobile menu
   function toggleMenu() {
     var navLinks = document.getElementById("nav-links");
@@ -39,3 +25,19 @@ toogleBtn.addEventListener('click', function() {
         icon.classList.replace('fa-sun', 'fa-moon');
     }
 });
+
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // prevent page reload
+
+  const formData = new FormData(this);
+
+  fetch("/contact", {
+    method: "POST",
+    body: formData
+  })
+    .then(function (response) {
+      return response.text();
+    })
+});
+
