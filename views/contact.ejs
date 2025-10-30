@@ -4,6 +4,16 @@
     <link rel="stylesheet" href="/styles/contact.css">
     <%- include('partials/head') %>
     <title>Document</title>
+    <style>
+@media (max-width: 767px){
+  .social-container{
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 20px;
+  }
+}
+    </style>
 </head>
 <body>
 <%- include('partials/navbar', { showOrderButton: true }) %>
@@ -29,6 +39,15 @@
     <button type="submit">Submit</button>
   </form>
 </section>
+</section>
+<section id="socials">
+  <h1>Connect With Us</h1>
+  <div class="social-container">
+    <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
 </section>
     <%- include('partials/footer') %>
     <button id="theme-toogle" class="theme-toogle">
