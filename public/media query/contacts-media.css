@@ -1,0 +1,8 @@
+@media (max-width: 767px){
+  .social-container{
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 20px;
+  }
+}
