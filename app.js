@@ -32,6 +32,9 @@ app.get('/contact', function(req, res) {
   res.render('contact');
 });
 
+app.get('/cart', function(req, res) {
+  res.render('cart');
+});
 // Post requests
 app.post("/contact", function (req, res) {
   const { email, phone, review } = req.body;

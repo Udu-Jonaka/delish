@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles/cart.css">
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/public/media query/cart-media.css">
+</head>
+<body>
+<div class="content">
+<section id="list">
+<div class="box">
+<% newListItems.forEach(function(item) { %>
+  <div class="item">
+    <form class="check" action="/delete" method="POST">
+      <input type="checkbox" name="id" value="<%= item._id %>" onChange="this.form.submit()">
+      <p><%= item.name %></p>
+    </form>
+  </div>
+<% }) %>
+</section>
+</div>
+<%- include('partials/navbar', { showOrderButton: true }) %>
+    <%- include('partials/footer') %>
+    <button id="theme-toogle" class="theme-toogle">
+      <i class="fas fa-moon"></i>
+    </button>
+    <script src="/JS/script.js"></script>
+</body>
+</html>
