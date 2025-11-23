@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 import Menu from './models/menu.js';
+import dotenv from "dotenv";
 
-mongoose.connect('mongodb://localhost:27017/delishDB');
+dotenv.config();
 
 const menuItems = [
     { name: 'Pasta & Plantain', price: 2500, image: '/images/Pasta.png', description: 'Delicious pasta with fried plantain' },
@@ -12,16 +13,16 @@ const menuItems = [
     { name: 'Beef Curry', price: 3200, image: '/images/beef-curry.png', description: 'Savory beef curry' }
 ];
 
-async function seedMenu() {
-    try {
-        await Menu.deleteMany({});
-        await Menu.insertMany(menuItems);
-        console.log('Menu seeded successfully!');
-    } catch (err) {
-        console.error('Error seeding menu:', err);
-    } finally {
-        mongoose.connection.close();
-    }
-}
-
-seedMenu();
+mongoose.connect(process.env.MONGO_URI)
+    .then(async () => {
+        try {
+            await Menu.deleteMany({});
+            await Menu.insertMany(menuItems);
+            console.log('Menu seeded successfully!');
+        } catch (err) {
+            console.error('Error seeding menu:', err);
+        } finally {
+            mongoose.connection.close();
+        }
+    })
+    .catch(err => console.log(err));

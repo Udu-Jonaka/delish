@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // connect to atlas
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Atlas connected"))
   .catch(err => console.log(err));
 
@@ -22,10 +22,6 @@ const PORT = 5100;
 app.use(express.urlencoded({ extended: true }));  // replaces body-parser
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/delishDB')
-.then(() => console.log('MongoDB connected'))
-.catch((err) => console.log('MongoDB connection error:', err));
 
 // View engine
 app.set('view engine', 'ejs');
