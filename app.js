@@ -3,6 +3,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
 import menuRoutes from './routes/menu.js';
+import dotenv from "dotenv";
+dotenv.config();
+
+// connect to atlas
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log("MongoDB Atlas connected"))
+  .catch(err => console.log(err));
 
 // Get __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
