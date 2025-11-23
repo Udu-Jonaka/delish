@@ -3,99 +3,49 @@
 <head>
     <link rel="stylesheet" href="/styles/menu.css">
     <%- include('partials/head') %>
-    <link rel="stylesheet" href="/media query/menu-media.css">   
+    <link rel="stylesheet" href="/media query/menu-media.css">
 </head>
 <body>
-<%- include('partials/navbar', { showOrderButton: false }) %>
+<%- include('partials/navbar', { showOrderButton: true }) %>
 
 <section id="header">
     <h1>Our Menu</h1>
 </section>
-    <!---------MENU--------->
+
 <section id="menu" class="menu">
     <div class="menu-container">
-        <div class="card">
-            <img src="/images/Pasta.png" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">Pasta & <br> plantain</h2>
-                <div class="card-stats">
-                <div class="stat">
-
-                <a href="" class="stat-label" data-image="/images/Pasta.png">Live Preview</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/images/stir-fry.png" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">Stir-fry <br> Pasta</h2>
-                <div class="card-stats">
-                <div class="stat">
-                <a href="" class="stat-number">Place Order</a>
-                <a href="" class="stat-label" data-image="/images/stir-fry.png">Live Preview</a>
-                </div>
+        <% items.forEach(item => { %>
+            <div class="card">
+                <img src="<%= item.image %>" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title"><%= item.name %></h2>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <form action="/add-to-cart" method="POST">
+                                <input type="hidden" name="itemId" value="<%= item._id %>">
+                                <button class="stat-number" type="submit">Place Order</button>
+                            </form>
+                            <a href="javascript:void(0)" class="stat-label" data-image="<%= item.image %>">
+                                Live Preview
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="/images/noodles.png" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">stir-fry <br> Noodles</h2>
-                <div class="card-stats">
-                <div class="stat">
-                <a href="" class="stat-number">Place Order</a>
-                <a href="" class="stat-label" data-image="/images/noodles.png">Live Preview</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/images/combo.png" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">Pasta <br> Combo</h2>
-                <div class="card-stats">
-                <div class="stat">
-                <a href="" class="stat-number">Place Order</a>
-                <a href="" class="stat-label" data-image="/images/combo.png">Live Preview</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/images/chicken-curry.png" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">Chicken <br> Curry</h2>
-                <div class="card-stats">
-                <div class="stat">
-                <a href="" class="stat-number">Place Order</a>
-                <a href="" class="stat-label" data-image="/images/chicken-curry.png">Live Preview</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/images/beef-curry.png" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">Beef<br>Curry</h2>
-                <div class="card-stats">
-                <div class="stat">
-                <a href="" class="stat-number">Place Order</a>
-                <a href="" class="stat-label" data-image="/images/beef-curry.png">Live Preview</a>
-                </div>
-                </div>
-            </div>
-        </div>
+        <% }) %>
     </div>
+
     <div id="imgModal" class="modal">
         <a href="javascript:void(0)" class="close">&times;</a>
         <img class="modal-content" id="modalImage">
     </div>
 </section>
-    <%- include('partials/footer') %>
-    <button id="theme-toogle" class="theme-toogle">
-      <i class="fas fa-moon"></i>
-    </button>
+
+<%- include('partials/footer') %>
+
+<button id="theme-toogle" class="theme-toogle">
+    <i class="fas fa-moon"></i>
+</button>
 <script src="/JS/menu.js"></script>
 </body>
 </html>

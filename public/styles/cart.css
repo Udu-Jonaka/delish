@@ -120,9 +120,98 @@ body.light-mode .nav-button {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-/* ---------- List Section ---------- */
-#list{
-    min-height: 350px;
+/* Base font & colors (borrowed from menu.css) */
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #121113;
+    color: #f0ead6;
+}
+body.light-mode {
+    background-color: #f0ead6;
+    color: #121113;
+}
+
+/* Header section */
+#header {
+    text-align: center;
+    padding-top: 100px;
+}
+
+/* Cart table styling */
+.cart-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #f0ead6;
+    color: #121113;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+body.light-mode .cart-table {
+    background-color: #121113;
+    color: #f0ead6;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: #d4af37;
+    color: #fff;
+}
+
+body.light-mode .cart-table th {
+    background-color: #cb6843;
+    color: #fff;
+}
+
+/* Buttons for + / - / Remove */
+.cart-table button {
+    padding: 5px 10px;
+    margin: 0 2px;
+    cursor: pointer;
+    border: none;
+    background-color: #121113;
+    color: #f0ead6;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cart-table button:hover {
+    background-color: #333;
+}
+
+body.light-mode .cart-table button {
+    background-color: #f0ead6;
+    color: #121113;
+}
+
+body.light-mode .cart-table button:hover {
+    background-color: #ddd;
+}
+
+/* Cart section wrapper */
+.cart-section {
+    margin: 50px auto;
+    width: 95%;
+    max-width: 1200px;
+}
+
+/* Empty cart message */
+.cart-section p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 50px;
+}
+
+/* Total row styling */
+.cart-table tr:last-child td {
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 /* ---------- Footer Section ---------- */
 #footer{

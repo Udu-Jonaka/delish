@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .cart-table, .cart-table th, .cart-table td {
+        font-size: 0.9rem;
+    }
+    .cart-table button {
+        padding: 3px 6px;
+        font-size: 0.85rem;
+    }
+}
