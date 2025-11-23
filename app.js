@@ -1,10 +1,32 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 import menuRoutes from './routes/menu.js';
 import dotenv from "dotenv";
 dotenv.config();
+
+// serverless function 
+import mongoose from "mongoose";
+
+let cached = global.mongoose;
+
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+
+export async function connectToDB() {
+  if (cached.conn) return cached.conn;
+
+  if (!cached.promise) {
+    const opts = { useNewUrlParser: true, useUnifiedTopology: true };
+    cached.promise = mongoose.connect(process.env.MONGO_URI, opts).then((mongoose) => mongoose);
+  }
+
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
+
 
 // connect to atlas
 mongoose.connect(process.env.MONGO_URI)
