@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/styles/cart.css">
     <%- include('partials/head') %>
     <link rel="stylesheet" href="/media query/cart-media.css">
+    
 </head>
 <body>
 <%- include('partials/navbar', { showOrderButton: false }) %>
@@ -33,20 +34,21 @@
                     <tr>
                         <td><%= ci.item.name %></td>
                         <td><%= ci.item.price %></td>
-                        <td><%= ci.quantity %></td>
-                        <td><%= subtotal %></td>
-                        <td>
-                            <form action="/cart/increase" method="POST" style="display:inline">
+                        <td class="quantity">
+                            <form action="/cart/increase" method="POST">
                                 <input type="hidden" name="itemId" value="<%= ci.item._id %>">
                                 <button>+</button>
                             </form>
-                            <form action="/cart/decrease" method="POST" style="display:inline">
+                            <%= ci.quantity %>
+                            <form action="/cart/decrease" method="POST">
                                 <input type="hidden" name="itemId" value="<%= ci.item._id %>">
                                 <button>-</button>
-                            </form>
+                            </form></td>
+                        <td><%= subtotal %></td>
+                        <td class="remove">
                             <form action="/cart/remove" method="POST" style="display:inline">
                                 <input type="hidden" name="itemId" value="<%= ci.item._id %>">
-                                <button>Remove</button>
+                                <button><i class="fa-solid fa-delete-left"></i></button>
                             </form>
                         </td>
                     </tr>

@@ -1,17 +1,53 @@
-    @media (max-width: 1199px) {
+/* Large screens - 4 columns */
+@media (min-width: 1400px) {
     .menu-container {
-        gap: 20px;
-    }
-    
-    .card {
-        width: 300px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
     }
 }
 
+/* Desktop - 3 columns */
+@media (min-width: 1000px) and (max-width: 1399px) {
+    .menu-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Large tablets and small desktops */
+@media (max-width: 1199px) {
+    .menu-container {
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .card {
+        max-width: 320px;
+    }
+}
+
+/* Medium tablets - 2 columns */
 @media (max-width: 991px) {
+    #header {
+        padding: 100px 20px 30px;
+    }
+    
+    #header h1 {
+        font-size: 3rem;
+    }
+    
+    #menu {
+        padding: 30px 15px 60px;
+    }
+    
     .menu-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        max-width: 800px;
+    }
+    
+    .card {
+        max-width: 100%;
     }
     
     .card-image {
@@ -23,61 +59,41 @@
     }
     
     .card-title {
-        font-size: 24px;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
     
     .stat-number {
-        font-size: 28px;
+        font-size: 1.6rem;
+    }
+    
+    footer {
+        padding: 40px 40px;
     }
 }
 
+/* Small tablets */
 @media (max-width: 767px) {
+    #header {
+        padding: 90px 15px 25px;
+    }
+    
+    #header h1 {
+        font-size: 2.5rem;
+    }
+    
     #menu {
         margin-top: 20px;
-        padding: 15px;
+        padding: 20px 10px 50px;
     }
     
     .menu-container {
         gap: 16px;
+        max-width: 600px;
     }
     
     .card {
-        max-width: 320px;
-    }
-    
-    .card-image {
-        height: 150px;
-    }
-    
-    .card-content {
-        padding: 10px;
-    }
-    
-    .card-title {
-        font-size: 22px;
-        margin-bottom: 10px;
-    }
-    
-    .stat-number {
-        font-size: 24px;
-    }
-    
-    .stat-label {
-        font-size: 11px;
-    }
-}
-@media (max-width: 575px) {
-    #menu {
-        padding: 10px;
-    }
-    
-    .menu-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .card {
-        width: 300px;
+        max-width: 100%;
     }
     
     .card-image {
@@ -89,22 +105,177 @@
     }
     
     .card-title {
-        font-size: 24px;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
     }
     
     .stat-number {
-        font-size: 28px;
+        font-size: 1.4rem;
+        padding: 6px 12px;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+    
+    footer {
+        padding: 30px 20px;
+        flex-direction: column;
+    }
+    
+    .footer-col {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+/* Mobile - 1 column */
+@media (max-width: 575px) {
+    #header {
+        padding: 80px 10px 20px;
+    }
+    
+    #header h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    #menu {
+        padding: 15px 5px 40px;
+    }
+    
+    .menu-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+        max-width: 350px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .card-image {
+        height: 220px;
+    }
+    
+    .card-content {
+        padding: 25px;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+        padding: 8px 14px;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
     }
     
     .card-stats {
         gap: 15px;
     }
+    
+    .theme-toogle {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    footer {
+        padding: 25px 15px;
+    }
+    
+    .footer-col h3 {
+        font-size: 18px;
+    }
+    
+    .contact-info,
+    .footer-col ul li {
+        font-size: 13px;
+    }
 }
 
-/* Extra small devices (up to 375px) */
+/* Extra small mobile devices */
 @media (max-width: 375px) {
+    #header {
+        padding: 75px 5px 15px;
+    }
+    
+    #header h1 {
+        font-size: 1.75rem;
+    }
+    
+    #menu {
+        padding: 10px 0 30px;
+    }
+    
+    .menu-container {
+        gap: 15px;
+        padding: 0 5px;
+        max-width: 300px;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
     .card-image {
         height: 180px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
+    }
+    
+    .stat-number {
+        font-size: 1.3rem;
+        padding: 6px 12px;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+    }
+    
+    .close {
+        font-size: 35px;
+        top: 10px;
+        right: 15px;
+    }
+    
+    footer {
+        padding: 20px 10px;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 320px) {
+    #header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .menu-container {
+        max-width: 280px;
+    }
+    
+    .card-image {
+        height: 160px;
     }
     
     .card-content {
@@ -112,15 +283,43 @@
     }
     
     .card-title {
-        font-size: 20px;
-        letter-spacing: 1px;
+        font-size: 1.1rem;
     }
     
     .stat-number {
-        font-size: 24px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    #header {
+        padding: 70px 20px 15px;
     }
     
-    .stat-label {
-        font-size: 10px;
+    #header h1 {
+        font-size: 2rem;
+    }
+    
+    #menu {
+        padding: 20px 15px 30px;
+    }
+    
+    .card-image {
+        height: 180px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .theme-toogle,
+    #navbar,
+    .nav-toggle {
+        display: none !important;
+    }
+    
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 }
