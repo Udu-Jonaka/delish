@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Menu from './models/menu.js';
+import Menu from './models/Menu.js';
 import dotenv from "dotenv";
 
 dotenv.config();
