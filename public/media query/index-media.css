@@ -227,11 +227,12 @@
     }
     
     .card {
-        min-width: 260px;
+        width: 100%;
+        max-width: 100%;
     }
     
     .card-image {
-        height: 200px;
+        height: 220px;
     }
     
     .card-content {
@@ -384,5 +385,132 @@
     
     .carousel-wrapper {
         padding: 30px 0;
+    }
+}
+    @media (max-width: 700px) {
+      .menu {
+        padding: 30px;
+      }
+      .menu-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .menu-card{
+        width: 300px;
+      }
+    }
+
+        @media (max-width: 768px) {
+            .card {
+                min-width: 280px;
+            }
+
+            .card-image {
+                height: 150px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 22px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                min-width: 250px;
+            }
+
+            .carousel-track {
+                gap: 20px;
+            }
+        }
+@media (max-width: 767px) {   
+    .card {
+        max-width: 320px;
+    }
+    
+    .card-image {
+        height: 150px;
+    }
+    
+    .card-content {
+        padding: 10px;
+    }
+    
+    .card-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+}
+@media (max-width: 575px) {
+    .card {
+        width: 250px;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 24px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    .card-stats {
+        gap: 15px;
+    }
+}
+
+/* Extra small devices (up to 375px) */
+@media (max-width: 375px) {
+    .card-image {
+        height: 180px;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .card-title {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .stat-label {
+        font-size: 10px;
     }
 }
